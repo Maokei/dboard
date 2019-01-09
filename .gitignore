@@ -36,3 +36,6 @@ bin
 *.log
 *.swp
 *.bak
+
+.directory
+.editorconfig
