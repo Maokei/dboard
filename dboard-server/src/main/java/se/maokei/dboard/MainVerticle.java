@@ -14,19 +14,37 @@ import io.vertx.ext.web.handler.StaticHandler;
 public class MainVerticle extends AbstractVerticle {
   private static final Logger LOGGER = LoggerFactory.getLogger(MainVerticle.class);
   public static void main(String[] args) {
-    Vertx vertx = Vertx.vertx();
-    ConfigRetriever configRetriever = ConfigRetriever.create(vertx);
-    configRetriever.getConfig(config -> {
-      if(config.succeeded()) {
-
-        JsonObject jsonConf = new JsonObject();
-
-        System.out.println(jsonConf);
-        DeploymentOptions options = new DeploymentOptions().setConfig(jsonConf);
-
+    Vertx vertx  = Vertx.vertx();
+    ConfigRetriever cr = ConfigRetriever.create(vertx);
+    cr.getConfig(config -> {
+      if (config.succeeded()) {
+        JsonObject conf = config.result();
+        DeploymentOptions options = new DeploymentOptions().setConfig(conf);
         vertx.deployVerticle(new MainVerticle(), options);
       }
     });
+  }
+
+  private Future<Void> deployHelper(Vertx vertx, String name) {
+    final Future<Void> future = Future.future();
+    ConfigRetriever cr = ConfigRetriever.create(vertx);
+    cr.getConfig(config -> {
+      if (config.succeeded()) {
+        JsonObject conf = config.result();
+        System.out.println("Starting server with configuration: \n" + conf.encodePrettily());
+        DeploymentOptions options = new DeploymentOptions().setConfig(conf);
+        vertx.deployVerticle(name, options, result -> {
+          if (result.failed()) {
+            LOGGER.error("Failed to deploy verticle " + name);
+            future.fail(result.cause());
+          } else {
+            LOGGER.info("Deployed verticle " + name);
+            future.complete();
+          }
+        });
+      }
+    });
+    return future;
   }
 
   @Override
