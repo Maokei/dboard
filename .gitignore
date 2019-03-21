@@ -32,6 +32,9 @@ out
 build
 bin
 
+# NodeJs
+node_modules
+
 # Other
 *.log
 *.swp
