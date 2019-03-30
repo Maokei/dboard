@@ -11,6 +11,6 @@
 
     <modules>
       <module>dboard-server</module>
-      <module>dboard-web</module>
+      <!--module>dboard-web</module-->
     </modules>
 </project>

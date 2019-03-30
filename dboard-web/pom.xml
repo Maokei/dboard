@@ -3,8 +3,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.eirslett</groupId>
-  <artifactId>example</artifactId>
+  <groupId>se.maokei</groupId>
+  <artifactId>dboard-web</artifactId>
   <version>0</version>
   <packaging>pom</packaging>
   
