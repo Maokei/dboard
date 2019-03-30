@@ -1,6 +1,65 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hej hej</h1>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="th=device-th, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+            color: 333;
+        }
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            width: 100%;
+        }
+        thead {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: indianred;
+            color: whitesmoke;
+            border-radius: 2px;
+        }
+        td {
+            border: 1px solid indianred;
+            text-align: center;
+        }
+        /* .row-item {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        } */
+        img {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Containers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Container id</th>
+                <th>image</th>
+                <th>command</th>
+                <th>created</th>
+                <th>status</th>
+                <th>port</th>
+                <th>names</th>
+            </tr>
+        </thead>
+        <tbody class="output">
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+</body>
 </html>
