@@ -22,8 +22,8 @@ public class DockerVerticle extends AbstractVerticle {
 
   @Override
   public void start(Future<Void > future) {
-    System.out.println("Docker verticle started");
-    System.out.println(docker.getHost());
+    System.out.println("Docker verticle started " + docker.getHost());
+
     try {
       docker.listContainers().forEach(elem -> System.out.println("container " + elem));
     } catch (DockerException e) {

@@ -19,9 +19,16 @@ function generateHtml(items) {
 }
 
 setInterval(() => {
+    const url = "http://localhost:3000/api/containers";
     const xhr = new XMLHttpRequest();
 
-    xhr.onload = function() {
+    xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var containerList = JSON.parse(this.responseText);
+        generateHtml(containerList);
+        }
+    };
 
-    }
+    xhr.open("GET", url, true);
+    xhr.send();
 }, 3000);
