@@ -1,4 +1,4 @@
-package se.maokei.dboard_server;
+package se.maokei.dboardServer;
 
 import io.vertx.config.ConfigRetriever;
 import io.vertx.core.*;

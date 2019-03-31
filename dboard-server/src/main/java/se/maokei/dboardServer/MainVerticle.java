@@ -1,4 +1,4 @@
-package se.maokei.dboard_server;
+package se.maokei.dboardServer;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
@@ -9,7 +9,7 @@ import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.CorsHandler;
 import io.vertx.ext.web.handler.StaticHandler;
-import se.maokei.dboard_server.controllers.DockerApi;
+import se.maokei.dboardServer.controllers.DockerApi;
 
 import java.util.HashSet;
 

@@ -1,7 +1,5 @@
-package se.maokei.dboard_server;
+package se.maokei.dboardServer;
 
-import com.github.dockerjava.api.model.Info;
-import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.spotify.docker.client.DefaultDockerClient;
 import com.spotify.docker.client.DockerCertificateException;
 import com.spotify.docker.client.DockerClient;

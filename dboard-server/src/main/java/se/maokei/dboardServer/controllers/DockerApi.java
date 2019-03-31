@@ -1,4 +1,4 @@
-package se.maokei.dboard_server.controllers;
+package se.maokei.dboardServer.controllers;
 
 import com.spotify.docker.client.DefaultDockerClient;
 import com.spotify.docker.client.DockerCertificateException;
