@@ -4,13 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dboard</groupId>
-    <artifactId>se.maokei</artifactId>
+    <groupId>se.maokei</groupId>
+    <artifactId>dboard</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <frontend-maven-plugin.version> 1.7.6</frontend-maven-plugin.version>
+        <node.version>v12.7.0</node.version>
+        <yarn.version>v1.17.3</yarn.version>
+        <vertx-version>3.8.0</vertx-version>
+        <java.version>1.8</java.version>
+    </properties>
+
     <modules>
       <module>dboard-server</module>
-      <!--module>dboard-web</module-->
+      <module>dboard-web</module>
     </modules>
 </project>
