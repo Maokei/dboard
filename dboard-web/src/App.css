@@ -1,7 +1,7 @@
 body {
     background-color: #0c2033 !important;
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
+    color: #fff !important;
     letter-spacing: .5px;
     font-size: 16px;
     font-weight: 300;
