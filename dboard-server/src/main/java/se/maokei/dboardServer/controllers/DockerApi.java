@@ -19,9 +19,16 @@ import java.util.List;
 public class DockerApi {
     private static final Logger LOGGER = LoggerFactory.getLogger(DockerApi.class);
     private Vertx vertx;
+    private DockerClient dockerClient;
 
     public DockerApi(Vertx vertx) {
         this.vertx = vertx;
+        try {
+            dockerClient = DefaultDockerClient.fromEnv().build();
+        }catch(DockerCertificateException e) {
+            LOGGER.error("Unable to get Docker client!");
+            e.printStackTrace();
+        }
     }
 
     public void defaultRoute(RoutingContext rc) {
@@ -32,13 +39,8 @@ public class DockerApi {
 
     public void getRunningContainers(RoutingContext rc) {
         List<Container> containers = null;
-        //TODO
         try {
-            final DockerClient docker = DefaultDockerClient.fromEnv().build();
-            containers = docker.listContainers();
-        } catch (DockerCertificateException e) {
-            LOGGER.error("Error!");
-            e.printStackTrace();
+            dockerClient.listContainers();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (DockerException e) {
@@ -48,12 +50,22 @@ public class DockerApi {
         rc.response().setStatusCode(200).end(ja.encodePrettily());
     }
 
+    public void getAvailableImages(RoutingContext rc) {
+        try {
+            rc.response().setStatusCode(200).end(new JsonArray(dockerClient.listImages()).encodePrettily());
+        }catch(DockerException | InterruptedException e) {
+            e.printStackTrace();
+            rc.response().setStatusCode(400).end("Error");
+        }
+    }
+
     public Router getApiSubrouter(Vertx vertx) {
         this.vertx = vertx;
         Router apiRoute = Router.router(vertx);
         apiRoute.route("/").handler(this::defaultRoute);
         apiRoute.route("/*").handler(BodyHandler.create());
         apiRoute.get("/containers").handler(this::getRunningContainers);
+        apiRoute.get("/images").handler(this::getAvailableImages);
 
         //apiRoute.route("/admin*").handler(JWTAuthHandler.create(jwt));
         return apiRoute;

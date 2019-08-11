@@ -1,7 +1,6 @@
 package se.maokei.dboardServer;
 
 import io.vertx.config.ConfigRetriever;
-//import io.vertx.core.*;
 import io.vertx.core.*;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
