@@ -1,0 +1,49 @@
+@import '../../../variables.scss';
+
+.overview-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr);
+    grid-gap: 20px;
+
+    ul {
+        list-style: none;
+    }
+
+    .overview-item {
+
+        .item-title {
+            text-decoration: none;
+            display: flex;
+
+            h4 {
+                flex-grow: 1;
+                padding: 1rem;
+                background: lighten($dark-blue, 3%);
+                color: $gainsbro-grey;
+                border-radius: 3px;
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        .item-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            // text-indent: 1rem;
+            max-height: 0;
+            overflow: hidden;
+            opacity: .00000001;
+            transition: all .3s ease-in-out;
+        }
+
+        .is-active {
+            max-height: 100em;
+            padding: 1rem;
+            opacity: 1;
+        }
+
+    }
+}
