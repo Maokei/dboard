@@ -19,7 +19,7 @@ function generateHtml(items) {
 }
 
 setInterval(() => {
-    const url = "http://localhost:3000/api/containers";
+    const url = "http://localhost:3003/api/containers";
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
