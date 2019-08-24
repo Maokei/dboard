@@ -2,51 +2,65 @@ import React, { Component } from 'react';
 import "./overview.scss";
 
 class Overview extends Component {
-    // constructor() {
-    //     super()
-    // }
+    constructor() {
+        super()
+        this.state = {
+            active: false
+        }
+        this.toggle = this.toggle.bind(this)
+    }
+
+    toggle() {
+        console.log("clicked");
+
+        this.setState({
+            active: !this.state.active,
+            className: 'active'
+        })
+    }
 
     render() {
+        const activeClass = this.state.active ? 'item-content active' : 'item-content'
         return(
             <div className="overview-container">
                 <ul>
-                    <li className="overview-item" id="container-id">
+                    <li key={this.id} className="overview-item" id="container-id" onClick={this.toggle}>
                         <a href="#container-id" className="item-title">
                             <h4>Container id</h4>
                         </a>
-                        <div className="item-content is-active">
+                        <div className={activeClass}>
                             <span>88a0a089fc5f1b3c5fe5135e747f2cac0245a76d0eea02c28a0b1567dc362ea7</span>
                         </div>
                     </li>
-                    <li className="overview-item" id="image">
+                    <li key={this.id} className="overview-item" id="image" onClick={this.toggle}>
                         <a href="#image" className="item-title">
                             <h4>image</h4>
                         </a>
-                        <div className="item-content">
+                        <div className={activeClass}>
                             <span>nodered/node-red-docker</span>
                         </div>
                     </li>
-                    <li className="overview-item" id="commandId">
+                    <li key={this.id} className="overview-item" id="commandId" onClick={this.toggle}>
                         <a href="#commandId" className="item-title">
                             <h4>command id</h4>
                         </a>
-                        <div className="item-content">
+                        <div className={activeClass}>
                             <span>npm start -- --userDir /data</span>
                         </div>
                     </li>
-                    <li className="overview-item" id="status">
+                    <li className="overview-item" id="status" onClick={this.toggle}>
                         <a href="#status" className="item-title">
                             <h4>status</h4>
                         </a>
-                        <div className="item-content">
+                        <div className={activeClass}>
                             <span>Up 21 minutes</span>
                         </div>
                     </li>
-                    <li className="overview-item" id="port">
+                    <li className="overview-item" id="port" onClick={this.toggle}>
                         <a href="#port" className="item-title">
                             <h4>ports</h4>
                         </a>
-                        <div className="item-content is-active">
+                        <div className={activeClass}>
                             <div>
                                 <h5>PrivatePort</h5>
                                 <p><span>1880</span></p>
@@ -65,11 +79,11 @@ class Overview extends Component {
                             </div>
                         </div>
                     </li>
-                    <li className="overview-item" id="imageId">
+                    <li className="overview-item" id="imageId" onClick={this.toggle}>
                         <a href="#imageId" className="item-title">
                             <h4>image id</h4>
                         </a>
-                        <div className="item-content">
+                        <div className={activeClass}>
                             <span>sha256:884b3ad2aabbe05cd5d8a17f8af800b540113ae289322174745305d094f63a53</span>
                         </div>
                     </li>
