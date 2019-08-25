@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Sidebar.scss";
 import avatarImg from "../../../img/avatar.png";
 
+// todo modify css using grid and accordion
+
 class Sidebar extends Component {
     constructor(props) {
         super(props);
