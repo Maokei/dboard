@@ -8,14 +8,26 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            email: "",
-            password: ""
+            username: "",
+            password: "",
         };
-    }
+	}
+
+	handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(this.username.value);
+		console.log(this.password.value);
+	}
 
     render() {
         return (
-            <div className="login"></div>
+	    <div className="Login">
+			<form className="Login-form" onSubmit={this.handleSubmit} >	    
+				<input ref={(input) => this.username = input} type="text" name="username" placeholder="username" />
+				<input ref={(input) =>this.password = input} type="password" name="password" placeholder="password" />
+				<button>LOGIN</button>
+			</form>
+	    </div>
         )
     }
 }
