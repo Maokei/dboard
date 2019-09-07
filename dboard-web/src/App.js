@@ -11,11 +11,11 @@ function App() {
       <div>
         <Header/>
         <Sidebar />
-        <div>
+        {/* <div>
           <Toggle shape={false} defState={false}/>
           <Toggle shape={true} defState={true} handleToggle={() => console.log("asdas")}/>
-        </div>
-        <Overview />
+        </div> */}
+        {/* <Overview /> */}
 
       </div>
   );
