@@ -11,15 +11,16 @@
     justify-items: start;
     align-content: start;
     grid-gap: 1.5em;
+    // width: 4.8em;
     padding-left: 1.2em;
 }
 
 .sidebar-container {
-    width: 4.8em;
+    max-width:  4.8em;
 }
 
 .sidebar-container-wide {
-    width: 13.3em;
+    max-width: 13.3em;
 }
 
 .profile {

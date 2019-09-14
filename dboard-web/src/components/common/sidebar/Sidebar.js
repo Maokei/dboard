@@ -8,8 +8,6 @@ class Sidebar extends Component {
 
         this.state = {
             visible: false,
-            flip: false,
-            addWidth: false
         }
         this.toggleMenu = this.toggleMenu.bind(this);
     }
@@ -18,16 +16,14 @@ class Sidebar extends Component {
         console.log("clicked");
         this.setState({
             visible: !this.state.visible,
-            flip: !this.state.flip,
-            addWidth: !this.state.width
         });
     }
 
     render() {
         const showClass = this.state.visible ? 'show profile__details' : 'profile__details';
         const showClass2 = this.state.visible ? 'show sidebar__menu-desc' : 'sidebar__menu-desc';
-        const sidebarWidth = this.state.addWidth ? 'sidebar-container-wide' : 'sidebar-container'
-        const flip180 = this.state.flip ? 'flip-180 fa fa-arrow-right' : 'fa fa-arrow-right';
+        const sidebarWidth = this.state.visible ? 'sidebar-container-wide' : 'sidebar-container'
+        const flip180 = this.state.visible ? 'flip-180 fa fa-arrow-right' : 'fa fa-arrow-right';
         return(
             <div className={sidebarWidth}>
                 <div className="profile">
