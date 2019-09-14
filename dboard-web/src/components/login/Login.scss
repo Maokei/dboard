@@ -1,1 +1,47 @@
 @import '../../variables.scss';
+
+.Login {
+  width: 30%;
+  padding: 1em;
+  border: 1px solid white;
+
+  .input-wrapper {
+    position: relative;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    background-color: $light-black;
+    border: 1px solid $dark-blue;
+  }
+
+  .input-wrapper input[type=text], input[type=password] {
+    padding-left: 25px;
+    max-width: calc(100% - 25px);
+    color: white;
+  }
+
+  .input-wrapper i {
+    color: $french-yellow;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  }
+
+  button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: $dark-blue;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+}
+
