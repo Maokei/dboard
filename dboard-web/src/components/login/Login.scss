@@ -23,6 +23,10 @@
     color: white;
   }
 
+  input[type=text]:focus, input[type=password]:focus {
+    border: 1px solid $french-yellow;
+  }
+
   .input-wrapper i {
     color: $french-yellow;
     position: absolute;
