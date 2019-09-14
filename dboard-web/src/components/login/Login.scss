@@ -13,11 +13,13 @@
     width: 100%;
     background-color: $light-black;
     border: 1px solid $dark-blue;
+    padding: 15px;
+    margin-bottom: 15px;
   }
 
   .input-wrapper input[type=text], input[type=password] {
     padding-left: 25px;
-    max-width: calc(100% - 25px);
+    max-width: calc(100% - 41px);
     color: white;
   }
 
@@ -26,7 +28,7 @@
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+    top: calc(50% - 1em); /* Keep icon in center of input, regardless of the input height */
   }
 
   button {
