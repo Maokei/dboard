@@ -8,15 +8,17 @@ import Login from './components/login/Login';
 import './App.scss';
 
 function App() {
-  return (
+  return ( 
       <BrowserRouter>
         <div>
+            <Header/>
+            <Sidebar />
             <Switch>
                 <Route path="/login" component={Login} exact/>
                 <Route path="/overview" component={Overview} exact />
             </Switch>
         </div>
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 
