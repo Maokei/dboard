@@ -27,8 +27,8 @@ class Sidebar extends Component {
         return(
             <div className={sidebarWidth}>
                 <div className="profile">
-                    <a href="#">
-                        <img src={avatarImg} className="profile-thumbnail" alt="profile image thumbnail"></img>
+                    <a href="#/">
+                        <img src={avatarImg} className="profile-thumbnail" alt="this is a placeholder"></img>
                     </a>
                     <h3 className={showClass}>Jane Doe</h3>
                     <p className={showClass}>Location Country</p>
@@ -36,11 +36,11 @@ class Sidebar extends Component {
                 <button className="toggle" onClick={this.toggleMenu}><i className={flip180}></i></button>
                 <div className="sidebar__menu">
                     <div className="sidebar__menu-icons">
-                        <a href="#"><i class="fas fa-home"></i></a>
-                        <a href="#"><i class="fas fa-history"></i></a>
-                        <a href="#"><i class="fas fa-folder-open"></i></a>
-                        <a href="#"><i class="fas fa-crown"></i></a>
-                        <a href="#"><i class="fas fa-cog"></i></a>
+                        <a href="#/"><i className="fas fa-home"></i></a>
+                        <a href="#/"><i className="fas fa-history"></i></a>
+                        <a href="#/"><i className="fas fa-folder-open"></i></a>
+                        <a href="#/"><i className="fas fa-crown"></i></a>
+                        <a href="#/"><i className="fas fa-cog"></i></a>
                     </div>
                     <div className={showClass2}>
                         <span>Home</span>
